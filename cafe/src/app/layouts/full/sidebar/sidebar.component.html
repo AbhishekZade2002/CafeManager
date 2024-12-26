@@ -1,0 +1,10 @@
+<mat-nav-list appAccordion>
+    <mat-list-item *ngFor="let menuitem of menuItems.getMenuitem()" 
+                   routerLinkActive="selected">
+      <a *ngIf="menuitem.type === 'link' && (menuitem.role === '' || menuitem.role === userRole)" 
+         [routerLink]="['/cafe/', menuitem.state]">
+        <span>{{menuitem.name}}</span>
+      </a>
+    </mat-list-item>
+  </mat-nav-list>
+  
